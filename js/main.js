@@ -1,10 +1,10 @@
 $(function () {
-
   $('.customer__inner').slick({
-    prevArrow: '<button class="customer__arrow-left" ><img src="images/arrow-slider-left.png" alt=""></button>',
-    nextArrow: '<button class="customer__arrow-right" ><img src="images/arrow-slider-right.png" alt=""></button>',
+    prevArrow: '<button class="customer__arrow-left" ><img src="images/arrow-slider-right.png" alt=""></button>',
+    nextArrow: '<button class="customer__arrow-right" ><img src="images/arrow-slider-left.png" alt=""></button>',
     slidesToShow: 3,
     slidesToScroll: 3,
+    infinite: false,
     dots: true,
     responsive: [
       {
@@ -28,6 +28,7 @@ $(function () {
 
     ]
   });
+
 
   $('.customer__card-btn ').click(function () {
     $(this).toggleClass('active')
@@ -80,16 +81,14 @@ $(function () {
     $('#external-buttons a.active').removeClass('active');
     $(this).addClass('active');
     var targetSlide = $(this).data('target');
-    $('.slick-slider').slick('slickGoTo', targetSlide);
+    $('.services__inner').slick('slickGoTo', targetSlide);
   });//click()
-
-
 
   $('.header__burger').on('click', function () {
     $('.header__burger, .header__nav').toggleClass("active");
     $('body').toggleClass('no-scroll');
-
   });
+
   $('.nav__link').on('click', function () {
     $('.header__burger, .header__nav').removeClass("active");
     $('body').removeClass('no-scroll');
@@ -100,12 +99,7 @@ $(function () {
     $('body').removeClass('no-scroll');
   });
 
-  $(document).on("click", ".nav__link", function (e) {
-    e.preventDefault();
-    var id = $(this).attr('href');
-    var top = $(id).offset().top; // получаем координаты блока
-    $('body, html').animate({ scrollTop: top }, 2800); // плавно переходим к блоку
-  });
+
 
   ymaps.ready(function () {
     var myMap = new ymaps.Map('map', {
@@ -121,7 +115,7 @@ $(function () {
       ),
 
       myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-        hintContent: 'г. Москва, Преображенская площадь, 8',
+        hintContent: 'Московский проспект, 97',
 
       }, {
         // Опции.
@@ -139,5 +133,149 @@ $(function () {
       .add(myPlacemark);
     myMap.behaviors.disable('scrollZoom');
   });
+
+  $('.input-tel').inputmask("+7(999)999-9999");
+
+  $(".form").each(function () {
+    $(this).validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 2,
+        },
+
+        email: {
+          required: true,
+          email: true,
+        },
+      
+      },
+      messages: {
+        name: {
+          required: "Укажите ваше имя",
+          minlength: jQuery.validator.format("Ваше  имя  должно  быть  не  менее  2х символов"),
+        },
+        email: {
+          required: "Нам нужен ваш адрес электронной почты, чтобы с вами связаться",
+          email: "Ваш адрес электронной почты должен быть в формате name@domain.com",
+        },
+        phone: {
+          required: "Введите ваш номер телефона."
+        },
+      },
+      submitHandler: function (form) {
+        $('.form-val').addClass("is-active");
+        $("body").addClass("no-scroll");
+        //очищаем все данные текстовых полей, кроме кнопок
+        $('form input').not(':button, :submit').val('');
+        $('form input.valid').removeClass('valid');
+      },
+    })
+  });
+
+  $(".appointment__form-form, .header-tel-form, .services__form-form").each(function () {
+    $(this).validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 2,
+        },
+
+        email: {
+          required: true,
+          email: true,
+        },
+        phone: {
+          required: true,
+
+        },
+      },
+      messages: {
+        name: {
+          required: "Укажите ваше имя",
+          minlength: jQuery.validator.format("Ваше  имя  должно  быть  не  менее  2х символов"),
+        },
+        email: {
+          required: "Нам нужен ваш адрес электронной почты, чтобы с вами связаться",
+          email: "Ваш адрес электронной почты должен быть в формате name@domain.com",
+        },
+        phone: {
+          required: "Введите ваш номер телефона."
+        },
+      },
+      submitHandler: function (form) {
+
+         $('.appointment__form, .form-tel, .services__form').removeClass("is-active");
+        $('.form-form').addClass("is-active");
+        $("body").addClass("no-scroll");
+        // очищаем все данные текстовых полей, кроме кнопок
+        $('form input').not(':button, :submit').val('');
+        $('form input.valid').removeClass('valid');
+       },
+    })
+  });
+  
+  $(document).on('click', function (e) { // отслеживаем событие клика по веб-документу
+    var block = $("form"); // определяем элемент, к которому будем применять условия (можем указывать ID, класс либо любой другой идентификатор элемента)
+    if (!block.is(e.target) // проверка условия если клик был не по нашему блоку
+        && block.has(e.target).length === 0) { // проверка условия если клик не по его дочерним элементам
+          $('form label.error').remove();
+          $('form input.error').removeClass('error');
+    
+          $('form input').val('');
+          $('form input.valid').removeClass('valid');
+        }
+});
+
+
+  $(".popup").on('click', function (e) { // отслеживаем событие клика по веб-документу
+    var block = $(".popup__content"); // определяем элемент, к которому будем применять условия (можем указывать ID, класс либо любой другой идентификатор элемента)
+    if (!block.is(e.target) // проверка условия если клик был не по нашему блоку
+        && block.has(e.target).length === 0) { // проверка условия если клик не по его дочерним элементам
+          $('.popup').removeClass("is-active");
+          $("body").removeClass("no-scroll");
+    }
+});
+
+
+
+  $('.popup-close').on('click', function () {
+    $('.popup').removeClass("is-active");
+    $("body").removeClass("no-scroll");
+  });
+  $(this).keydown(function (eventObject) {
+    if (eventObject.which == 27)
+      $('.popup').removeClass("is-active");
+    $("body").removeClass("no-scroll");
+  });
+
+  $('.header__info-btn').on('click', function () {
+    $('.appointment__form').addClass("is-active");
+  });
+  
+  $('.header__btn').on('click', function () {
+    $('.form-tel').addClass("is-active");
+  });
+
+  $('.services__btn-btn').on('click', function () {
+    $('.services__form').addClass("is-active");
+  });
+
+
+  $(document).on("click", ".nav__link", function (e) {
+    e.preventDefault();
+    var id = $(this).attr('href');
+    var top = $(id).offset().top; // получаем координаты блока
+    $('body, html').animate({ scrollTop: top }, 1800); // плавно переходим к блоку
+  });
+  // ПРЕЛОУДЕР
+  window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+
+      document.body.classList.remove('loaded_hiding');
+    }, 100);
+  }
 
 })

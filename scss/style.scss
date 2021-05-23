@@ -20,7 +20,7 @@
     margin-right: 99px;
     width: 150px;
     flex-shrink: 0;
-    z-index: 10000;
+    z-index: 10;
   }
 
   &__nav {
@@ -73,7 +73,7 @@
   &__tel {
     text-align: right;
     margin-left: 34px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: #565d5a;
     line-height: 1.2;
     margin-bottom: 4px;
@@ -85,7 +85,7 @@
     span {
       display: block;
       font-size: 14px;
-      font-family: "SFProDisplay";
+      font-family: "SFProDisplay-400";
       color: #7f8984;
       line-height: 1.2;
     }
@@ -148,7 +148,7 @@
 
   &__info-title {
     font-size: 40px;
-    font-family: "BoschSerif";
+    font-family: "BoschSerif-400";
     color: #55605b;
     line-height: 1.15;
     margin-bottom: 66px;
@@ -163,7 +163,7 @@
     position: relative;
     padding-left: 30px;
     font-size: 16px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: rgb(164, 172, 168);
     line-height: 1.438;
     max-width: 250px;
@@ -204,7 +204,7 @@
   }
   &__info-num {
     font-size: 55px;
-    font-family: "BoschSerif";
+    font-family: "BoschSerif-400";
     color: #42dd95;
     line-height: 0.545;
     margin-right: 18px;
@@ -216,7 +216,7 @@
   }
   &__info-text {
     font-size: 14px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: #626b66;
     line-height: 1.286;
   }
@@ -290,7 +290,7 @@
 
   &__card-title {
     font-size: 23px;
-    font-family: "BoschSerif";
+    font-family: "BoschSerif-400";
     color: rgb(97, 110, 104);
     line-height: 1.261;
     margin-bottom: 12px;
@@ -298,14 +298,14 @@
 
   &__card-text {
     font-size: 16px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: rgb(164, 172, 168);
     line-height: 1.438;
   }
 
   &__card-num {
     font-size: 85px;
-    font-family: "BoschSerif";
+    font-family: "BoschSerif-400";
     color: rgba(66, 221, 149, 0.29);
     font-weight: bold;
     line-height: 0.353;
@@ -417,7 +417,7 @@
     width: 318px;
     li {
       font-size: 16px;
-      font-family: "SFProDisplay";
+      font-family: "SFProDisplay-400";
       color: rgb(164, 172, 168);
       line-height: 1.438;
       margin-bottom: 20px;
@@ -535,7 +535,7 @@
   &__card-text {
     margin-bottom: 22px;
     font-size: 14px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: rgba(164, 172, 168, 0.702);
     line-height: 1.643;
     margin: 0; /* Убираем внешний отступ */
@@ -553,7 +553,7 @@
   &__card-btn {
     background-color: transparent;
     font-size: 16px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: #20bd64b3;
     line-height: 1.388;
     border-bottom: 1px dashed #20bd64b3;
@@ -575,14 +575,14 @@
 
   &__card-user-name {
     font-size: 14px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: rgba(97, 110, 104, 0.702);
     line-height: 1.329;
   }
 
   &__card-user-link {
     font-size: 14px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: rgba(97, 110, 104, 0.702);
     line-height: 1.329;
   }
@@ -610,8 +610,8 @@
   &__btn {
     padding: 15px 36px;
     margin-bottom: 6px;
-    font-size: 16px;
-    font-family: "SFProDisplay";
+    font-size: 14px;
+    font-family: "SFProDisplay-400";
     color: rgb(186, 196, 191);
     line-height: 1.438;
     background-color: transparent;
@@ -652,7 +652,7 @@
   &__inner-title {
     margin-bottom: 20px;
     font-size: 33px;
-    font-family: "BoschSerif";
+    font-family: "BoschSerif-400";
     color: rgb(97, 110, 104);
     line-height: 0.879;
   }
@@ -660,7 +660,7 @@
   &__inner-time {
     margin-bottom: 10px;
     font-size: 16px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: rgb(164, 172, 168);
     line-height: 1.5;
   }
@@ -668,7 +668,7 @@
   &__inner-text {
     margin-bottom: 30px;
     font-size: 14px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: rgb(164, 172, 168);
     line-height: 1.643;
   }
@@ -707,8 +707,8 @@
     border: 2px rgb(148, 206, 172) dashed;
     border-radius: 8px;
     background-color: rgb(255, 255, 255);
-    font-size: 25px;
-    font-family: "SFProDisplay";
+    font-size: 20px;
+    font-family: "SFProDisplay-400";
     color: rgb(93, 93, 98);
     line-height: 1.318;
     text-align: center;
@@ -726,7 +726,7 @@
 
   &__name {
     font-size: 25px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: rgb(93, 93, 98);
     line-height: 1.318;
   }
@@ -734,7 +734,7 @@
   &__prof {
     margin-bottom: 20px;
     font-size: 16px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: rgb(164, 172, 168);
     line-height: 1.5;
   }
@@ -769,7 +769,7 @@
   &__tel-link {
     display: block;
     font-size: 20px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: rgb(164, 172, 168);
     line-height: 1.2;
     margin-bottom: 20px;
@@ -782,7 +782,7 @@
     }
     li {
       font-size: 16px;
-      font-family: "SFProDisplay";
+      font-family: "SFProDisplay-400";
       color: rgb(164, 172, 168);
       line-height: 1.5;
     }
@@ -793,7 +793,7 @@
   &__tel {
     display: block;
     font-size: 23px;
-    font-family: "BoschSerif";
+    font-family: "BoschSerif-400";
     color: rgb(97, 110, 104);
     line-height: 1.261;
   }
@@ -801,7 +801,7 @@
   &__descr {
     margin-bottom: 5px;
     font-size: 23px;
-    font-family: "BoschSerif";
+    font-family: "BoschSerif-400";
     color: rgb(97, 110, 104);
     line-height: 1.261;
   }
@@ -828,7 +828,7 @@
     width: 210px;
     span {
       font-size: 14px;
-      font-family: "SFProDisplay";
+      font-family: "SFProDisplay-400";
       color: rgb(157, 163, 160);
       line-height: 1.643;
     }
@@ -848,14 +848,14 @@
       display: block;
       margin-bottom: 5px;
       font-size: 20px;
-      font-family: "SFProDisplay";
+      font-family: "SFProDisplay-400";
       color: rgb(66, 76, 71);
       line-height: 1.2;
     }
     span {
       display: block;
       font-size: 14px;
-      font-family: "SFProDisplay";
+      font-family: "SFProDisplay-400";
       color: rgb(157, 163, 160);
       line-height: 1.714;
     }
@@ -927,7 +927,7 @@
 
   &__coppy {
     font-size: 15px;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: rgb(157, 163, 160);
     line-height: 1.4;
   }
@@ -990,7 +990,7 @@
   .advantages__card::after {
     content: "";
     font-size: 85px;
-    font-family: "BoschSerif";
+    font-family: "BoschSerif-400";
     color: rgba(66, 221, 149, 0.29);
     font-weight: bold;
     line-height: 0.353;
@@ -1093,6 +1093,8 @@
     left: 0;
     top: -100px;
     z-index: 3;
+    font-size: 18px;
+    padding: 22px;
   }
   .contacts__info {
     position: static;
@@ -1121,7 +1123,7 @@
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 876px) {
   .header__top {
     align-items: start;
   }
@@ -1226,7 +1228,7 @@
     display: block;
     text-align: right;
     margin-left: auto;
-    font-family: "SFProDisplay";
+    font-family: "SFProDisplay-400";
     color: #565d5a;
     margin-bottom: 4px;
     margin-top: 16px;
@@ -1241,7 +1243,7 @@
     span {
       display: block;
       font-size: 14px;
-      font-family: "SFProDisplay";
+      font-family: "SFProDisplay-400";
       color: #7f8984;
       line-height: 1.2;
     }
@@ -1381,6 +1383,12 @@
   .footer__social {
     justify-content: center;
   }
+  .popup__title-appointment{
+    font-size: 26px;
+  }
+  .appointment__form-form{
+    padding: 0;
+  }
 }
 
 @media (max-width: 450px) {
@@ -1434,6 +1442,9 @@
   .footer__list {
     text-align: center;
   }
+  .popup__title{
+    font-size: 27px;
+  }
 }
 
 @media (max-width: 378px) {
@@ -1461,12 +1472,12 @@
     margin-left: -15px;
     margin-right: -15px;
   }
-  .promo__descr {
-    font-size: 20px;
-    padding: 22px;
-  }
+
   .contacts__info {
     padding: 0;
     margin-bottom: 26px;
+  }
+  .popup__title-appointment{
+    font-size: 22px;
   }
 }

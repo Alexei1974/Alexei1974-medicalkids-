@@ -12,16 +12,18 @@
   box-sizing: border-box;
 }
 
-:focus,
-:active {
-  outline: transparent;
-}
+// :focus,
+// :active {
+//   outline: transparent;
+// }
 
-a:focus,
-a:active {
-  outline: transparent;
+// a:focus,
+// a:active {
+//   outline: transparent;
+// }
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: 0;
 }
-
 nav,
 footer,
 header,
