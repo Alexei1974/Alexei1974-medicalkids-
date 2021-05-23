@@ -4,17 +4,48 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Medicalkids-прием педиатра
+		со скидкой 50% в детском
+		медицинском центре</title>
+	<meta name="description" content="Medicalkids-прием педиатра
+		со скидкой 50% в детском
+		медицинском центре">
+	<meta name="Keywords" content="прием педиатра">
+
+	<meta property="og:title" content="Medicalkids-прием педиатра
+	со скидкой 50% в детском
+	медицинском центре" />
+	<meta property="og:description" content="Прием педиатра
+	со скидкой 50% в детском
+	медицинском центре" />
+	<meta property="og:image" content="images/intro-bg.jpg);"/>
+
+	<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="images/favicon/site.webmanifest">
+	<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
 	<link rel="stylesheet" href="libs/slick.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+	<div class="preloader">
+		<svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+			<path fill="currentColor"
+				d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+			</path>
+		</svg>
+	</div>
 	<div class="wrapper">
+
 		<header class="header" style="background-image:url(images/intro-bg.jpg)">
 			<div class="container">
 				<div class="header__top" id="top">
-					<a class="header__logo" href="#">
+					<a class="header__logo" href="">
 						<img src="images/logo.png" alt="logo">
 					</a>
 					<nav class=" nav header__nav">
@@ -215,7 +246,7 @@
 							<img src="images/certificate.png" alt="">
 						</div>
 						<div class="certificate__right">
-							<div class="certificate__form form">
+							<form class="certificate__form form" method="post" >
 								<div class="form__circle"></div>
 
 								<h3 class="form__title">
@@ -226,12 +257,14 @@
 									и получите сертификат
 									на почту в течение 5-ти минут
 								</p>
-								<form>
+							
 									<label class="label-name">
-										<input class="input-name" type="text" placeholder="Введите ваше имя">
+										<input class="input-name" type="text" placeholder="Введите ваше имя" name="name"
+											required>
 									</label>
 									<label class="label-email">
-										<input class="input-email" type="text" placeholder="Введите ваш  e-mail">
+										<input class="input-email" type="email" placeholder="Введите ваш  e-mail"
+											name="email" required>
 									</label>
 									<button class="btn form__btn" type="submit"> <span>получить сертификат</span>
 									</button>
@@ -239,9 +272,9 @@
 										Нажимая на кнопку, вы соглашаетесь
 										на <a href="#">обработку персональных данных</a>
 									</div>
-								</form>
+								
 
-							</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -633,7 +666,7 @@
 										по 30
 										направлениям, а также специалисты узкого профиля
 									</p>
-									<button class="btn services__btn-inner">Узнать расписание</button>
+									<button class="btn services__btn-inner services__btn-btn">Узнать расписание</button>
 								</div>
 							</div>
 						</div>
@@ -654,7 +687,8 @@
 										по 30
 										направлениям, а также специалисты узкого профиля
 									</p>
-									<button class="btn services__btn-inner">Узнать расписание</button>
+									<button class="btn services__btn-inner services__btn-btn ">Узнать
+										расписание</button>
 								</div>
 							</div>
 						</div>
@@ -675,7 +709,8 @@
 										по 30
 										направлениям, а также специалисты узкого профиля
 									</p>
-									<button class="btn services__btn-inner">Узнать расписание</button>
+									<button class="btn services__btn-inner services__btn-btn ">Узнать
+										расписание</button>
 								</div>
 							</div>
 						</div>
@@ -696,7 +731,7 @@
 										по 30
 										направлениям, а также специалисты узкого профиля
 									</p>
-									<button class="btn services__btn-inner">Узнать расписание</button>
+									<button class="btn services__btn-inner services__btn-btn">Узнать расписание</button>
 								</div>
 							</div>
 						</div>
@@ -717,7 +752,7 @@
 										по 30
 										направлениям, а также специалисты узкого профиля
 									</p>
-									<button class="btn services__btn-inner">Узнать расписание</button>
+									<button class="btn services__btn-inner services__btn-btn">Узнать расписание</button>
 								</div>
 							</div>
 						</div>
@@ -738,19 +773,17 @@
 										по 30
 										направлениям, а также специалисты узкого профиля
 									</p>
-									<button class="btn services__btn-inner">Узнать расписание</button>
+									<button class="btn services__btn-inner services__btn-btn">Узнать расписание</button>
 								</div>
 							</div>
 						</div>
-
-
 					</div>
 				</div>
 			</section>
 			<div class="promo">
 				<div class="container">
 					<div class="promo__inner">
-						<div class="promo__form form">
+						<form class="promo__form form" method="get">
 							<div class="form__circle"></div>
 
 							<h3 class="form__title">
@@ -761,21 +794,22 @@
 								и получите сертификат
 								на почту в течение 5-ти минут
 							</p>
-							<form>
+							
 								<label class="label-name">
-									<input class="input-name" type="text" placeholder="Введите ваше имя">
+									<input class="input-name" type="text" placeholder="Введите ваше имя" name="name">
 								</label>
 								<label class="label-email">
-									<input class="input-email" type="text" placeholder="Введите ваш  e-mail">
+									<input class="input-email" type="text" placeholder="Введите ваш  e-mail"
+										name="email">
 								</label>
 								<button class="btn form__btn" type="submit"> <span>получить сертификат</span> </button>
 								<div class="form__sub">
 									Нажимая на кнопку, вы соглашаетесь
 									на <a href="#">обработку персональных данных</a>
 								</div>
-							</form>
+							
 
-						</div>
+						</form>
 						<div class="promo__form-right">
 							<img src="images/man.png" alt="">
 							<p class="promo__descr">
@@ -887,12 +921,95 @@
 			</div>
 		</footer>
 	</div>
-	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU;>" type="text/javascript"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 	<script src="libs/jQuery/jquery-3.5.1.min.js">
 	</script>
+	<script src="libs/focus-visible.js"></script>
+	<script src="libs/jquery.inputmask.min.js"></script>
+	<script src="libs/jquery.validate.min.js"></script>
 	<script src="libs/slick.min.js"></script>
 	<script src="js/main.js"></script>
 
+	<div class="popup form-val">
+		<div class="popup__wraper">
+			<div class="popup__inner">
+				<div class="popup__content">
+					<button class="popup-close popup__btn-close"></button>
+					<h2 class="title popup__title">Успешно отправлено</h2>
+					<p class="popup__subtitle">Мы
+						вышлем сертификат
+						на вашу почту в течение 5-ти минут
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="appointment__form popup">
+		<div class="popup__wraper">
+			<div class="popup__inner">
+				<div class="popup__content">
+					<button class="popup-close popup__btn-close"></button>
+					<h2 class="title popup__title-appointment">Напишите нам ваш e-mail и телефон и мы свяжемся с вами в
+						течении 15 минут</h2>
+					<form class="appointment__form-form">
+						<input class="input-name" type="text" placeholder="Введите ваше имя" name="name">
+						<input class="input-tel" type="tel" name="phone" placeholder="Введите ваш телефон">
+						<input class="input-email" type="text" placeholder="Введите ваш  e-mail" name="email">
+						<button class="btn form-btn appointment__form-btn" type="submit"> <span>Отправить</span>
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup form-form">
+		<div class="popup__wraper">
+			<div class="popup__inner">
+				<div class="popup__content">
+					<button class="popup-close popup__btn-close"></button>
+					<h2 class="title popup__title">Ваша заявка принята!</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup form-tel">
+		<div class="popup__wraper">
+			<div class="popup__inner">
+				<div class="popup__content">
+					<button class="popup-close popup__btn-close"></button>
+					<form class="header-tel-form">
+						<h2 class="title popup__title">Отправте нам ваш номер телефона и мы перезвоним вам в течении 15
+							минут!</h2>
+						<input class="input-tel" type="tel" name="phone" placeholder="Введите ваш телефон">
+
+						<button class="btn form-btn appointment__form-btn" type="submit"> <span>Отправить</span>
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="services__form popup">
+		<div class="popup__wraper">
+			<div class="popup__inner">
+				<div class="popup__content">
+					<button class="popup-close popup__btn-close"></button>
+					<h2 class="title popup__title-appointment">Напишите нам ваш e-mail и мы вышлем вам расписание и
+						время работы наших докторов и полный прайслист с услугами</h2>
+					<form class="services__form-form">
+						<input class="input-name" type="text" placeholder="Введите ваше имя" name="name">
+						<input class="input-email" type="text" placeholder="Введите ваш  e-mail" name="email">
+						<button class="btn form-btn appointment__form-btn" type="submit"> <span>Отправить</span>
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
