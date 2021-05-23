@@ -557,7 +557,6 @@ input.valid {
   right: 0;
   bottom: 0;
   overflow: hidden;
-  background-color: #21d4fd;
   background: linear-gradient(181deg, #5db08a 0%, #deffd2 100%);
   z-index: 1001;
   color: #eee;
