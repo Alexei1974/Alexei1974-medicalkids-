@@ -269,12 +269,12 @@ $(function () {
     $('body, html').animate({ scrollTop: top }, 1800); // плавно переходим к блоку
   });
   // ПРЕЛОУДЕР
-  window.onload = function () {
-    document.body.classList.add('loaded_hiding');
-    window.setTimeout(function () {
-      document.body.classList.add('loaded');
-      document.body.classList.remove('loaded_hiding');
-    }, 500);
-  }
+  // window.onload = function () {
+  //   document.body.classList.add('loaded_hiding');
+  //   window.setTimeout(function () {
+  //     document.body.classList.add('loaded');
+  //     document.body.classList.remove('loaded_hiding');
+  //   }, 500);
+  // }
 
 })
