@@ -1,4 +1,7 @@
 $(function () {
+  var lazyLoadInstance = new LazyLoad({
+
+  });
   $('.customer__inner').slick({
     prevArrow: '<button class="customer__arrow-left" ><img src="images/arrow-slider-right.png" alt=""></button>',
     nextArrow: '<button class="customer__arrow-right" ><img src="images/arrow-slider-left.png" alt=""></button>',
@@ -101,38 +104,70 @@ $(function () {
 
 
 
-  ymaps.ready(function () {
-    var myMap = new ymaps.Map('map', {
-      center: [59.893304, 30.316722],
-      zoom: 14
-    }, {
-      searchControlProvider: 'yandex#search'
-    }),
 
-      // Создаём макет содержимого.
-      MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-        '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-      ),
 
-      myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-        hintContent: 'Московский проспект, 97',
 
+
+  var sectionContacts = document.querySelector('.contacts');
+  var ymapInit = function () {
+    ymaps.ready(function () {
+      var myMap = new ymaps.Map('map', {
+        center: [59.893304, 30.316722],
+        zoom: 14
       }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#image',
-        // Своё изображение иконки метки.
-        iconImageHref: 'images/care.png',
-        // Размеры метки.
-        iconImageSize: [54, 72],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [-10, -38]
-      });
-    myMap.geoObjects
-      .add(myPlacemark);
-    myMap.behaviors.disable('scrollZoom');
-  });
+        searchControlProvider: 'yandex#search'
+      }),
+
+        // Создаём макет содержимого.
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+          '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+          hintContent: 'Московский проспект, 97',
+
+        }, {
+          // Опции.
+          // Необходимо указать данный тип макета.
+          iconLayout: 'default#image',
+          // Своё изображение иконки метки.
+          iconImageHref: 'images/care.png',
+          // Размеры метки.
+          iconImageSize: [54, 72],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-10, -38]
+        });
+      myMap.geoObjects
+        .add(myPlacemark);
+      myMap.behaviors.disable('scrollZoom');
+
+    });
+  };
+
+
+
+
+
+  var ymapLoad = function () {
+    var script = document.createElement('script');
+    script.src = "https://api-maps.yandex.ru/2.1/?lang=en_RU";
+    document.body.appendChild(script);
+    script.addEventListener('load', ymapInit);
+  };
+  var checkYamapInit = function () {
+    var sectionContactsTop = sectionContacts.getBoundingClientRect().top;
+    var scrollTop = window.pageYOffset;
+    var sectionContactsOffsetTop = scrollTop + sectionContactsTop;
+
+    if (scrollTop + window.innerHeight > sectionContactsOffsetTop) {
+      ymapLoad();
+      window.removeEventListener('scroll', checkYamapInit);
+    }
+  };
+  window.addEventListener('scroll', checkYamapInit);
+  checkYamapInit();
+
 
   $('.input-tel').inputmask("+7(999)999-9999");
 
@@ -148,7 +183,7 @@ $(function () {
           required: true,
           email: true,
         },
-      
+
       },
       messages: {
         name: {
@@ -205,37 +240,37 @@ $(function () {
       },
       submitHandler: function (form) {
 
-         $('.appointment__form, .form-tel, .services__form').removeClass("is-active");
+        $('.appointment__form, .form-tel, .services__form').removeClass("is-active");
         $('.form-form').addClass("is-active");
         $("body").addClass("no-scroll");
         // очищаем все данные текстовых полей, кроме кнопок
         $('form input').not(':button, :submit').val('');
         $('form input.valid').removeClass('valid');
-       },
+      },
     })
   });
-  
+
   $(document).on('click', function (e) { // отслеживаем событие клика по веб-документу
     var block = $("form"); // определяем элемент, к которому будем применять условия (можем указывать ID, класс либо любой другой идентификатор элемента)
     if (!block.is(e.target) // проверка условия если клик был не по нашему блоку
-        && block.has(e.target).length === 0) { // проверка условия если клик не по его дочерним элементам
-          $('form label.error').remove();
-          $('form input.error').removeClass('error');
-    
-          $('form input').val('');
-          $('form input.valid').removeClass('valid');
-        }
-});
+      && block.has(e.target).length === 0) { // проверка условия если клик не по его дочерним элементам
+      $('form label.error').remove();
+      $('form input.error').removeClass('error');
+
+      $('form input').val('');
+      $('form input.valid').removeClass('valid');
+    }
+  });
 
 
   $(".popup").on('click', function (e) { // отслеживаем событие клика по веб-документу
     var block = $(".popup__content"); // определяем элемент, к которому будем применять условия (можем указывать ID, класс либо любой другой идентификатор элемента)
     if (!block.is(e.target) // проверка условия если клик был не по нашему блоку
-        && block.has(e.target).length === 0) { // проверка условия если клик не по его дочерним элементам
-          $('.popup').removeClass("is-active");
-          $("body").removeClass("no-scroll");
+      && block.has(e.target).length === 0) { // проверка условия если клик не по его дочерним элементам
+      $('.popup').removeClass("is-active");
+      $("body").removeClass("no-scroll");
     }
-});
+  });
 
 
 
@@ -252,7 +287,7 @@ $(function () {
   $('.header__info-btn').on('click', function () {
     $('.appointment__form').addClass("is-active");
   });
-  
+
   $('.header__btn').on('click', function () {
     $('.form-tel').addClass("is-active");
   });
@@ -269,12 +304,12 @@ $(function () {
     $('body, html').animate({ scrollTop: top }, 1800); // плавно переходим к блоку
   });
   // ПРЕЛОУДЕР
-  // window.onload = function () {
-  //   document.body.classList.add('loaded_hiding');
-  //   window.setTimeout(function () {
-  //     document.body.classList.add('loaded');
-  //     document.body.classList.remove('loaded_hiding');
-  //   }, 500);
-  // }
+  window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 500);
+  };
 
-})
+});
