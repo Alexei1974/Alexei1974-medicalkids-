@@ -1,32 +1,32 @@
 $(function () {
-  var canUseWebP = function() {
-    var elem = document.createElement('canvas');
-
-    if (!!(elem.getContext && elem.getContext('2d'))) {
-        // was able or not to get WebP representation
-        return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+  window.onload = function () {
+    // Получаем все элементы с дата-атрибутом data-bg
+    let images = document.querySelectorAll('[data-bg]');
+    // Проходимся по каждому
+    for (let i = 0; i < images.length; i++) {
+      // Получаем значение каждого дата-атрибута
+      let image = images[i].getAttribute('data-bg');
+      // Каждому найденному элементу задаем свойство background-image с изображение формата jpg
+      images[i].style.backgroundImage = 'url(' + image + ')';
     }
 
-    // very old browser like IE 8, canvas not supported
-    return false;
-  };
-  var isWebpSupported = canUseWebP();
+    // Проверяем, является ли браузер посетителя сайта Firefox и получаем его версию
+    let isitFirefox = window.navigator.userAgent.match(/Firefox\/([0-9]+)\./);
+    let firefoxVer = isitFirefox ? parseInt(isitFirefox[1]) : 0;
 
-  if (isWebpSupported === false) {
-    var lazyItems = document.querySelectorAll('[data-src-replace-webp]');
-
-    for (var i = 0; i < lazyItems.length; i += 1) {
-      var item = lazyItems[i];
-
-      var dataSrcReplaceWebp = item.getAttribute('data-src-replace-webp');
-      if (dataSrcReplaceWebp !== null) {
-        item.setAttribute('data-bg', dataSrcReplaceWebp);
+    // Если есть поддержка Webp или браузер Firefox версии больше или равно 65
+    if (canUseWebp() || firefoxVer >= 65) {
+      // Делаем все то же самое что и для jpg, но уже для изображений формата Webp
+      let imagesWebp = document.querySelectorAll('[data-bg-webp]');
+      for (let i = 0; i < imagesWebp.length; i++) {
+        let imageWebp = imagesWebp[i].getAttribute('data-bg-webp');
+        imagesWebp[i].style.backgroundImage = 'url(' + imageWebp + ')';
       }
     }
-  }
+  };
 
   var lazyLoadInstance = new LazyLoad({
-   
+
   });
 
 
