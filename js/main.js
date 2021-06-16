@@ -1,5 +1,4 @@
 $(function () {
-
   var canUseWebP = function() {
     var elem = document.createElement('canvas');
 
@@ -131,12 +130,6 @@ $(function () {
     $('body').removeClass('no-scroll');
   });
 
-
-
-
-
-
-
   var sectionContacts = document.querySelector('.contacts');
   var ymapInit = function () {
     ymaps.ready(function () {
@@ -173,10 +166,6 @@ $(function () {
 
     });
   };
-
-
-
-
 
   var ymapLoad = function () {
     var script = document.createElement('script');
@@ -291,7 +280,6 @@ $(function () {
     }
   });
 
-
   $(".popup").on('click', function (e) { // отслеживаем событие клика по веб-документу
     var block = $(".popup__content"); // определяем элемент, к которому будем применять условия (можем указывать ID, класс либо любой другой идентификатор элемента)
     if (!block.is(e.target) // проверка условия если клик был не по нашему блоку
@@ -300,8 +288,6 @@ $(function () {
       $("body").removeClass("no-scroll");
     }
   });
-
-
 
   $('.popup-close').on('click', function () {
     $('.popup').removeClass("is-active");
@@ -332,7 +318,8 @@ $(function () {
     var top = $(id).offset().top; // получаем координаты блока
     $('body, html').animate({ scrollTop: top }, 1800); // плавно переходим к блоку
   });
-  // ПРЕЛОУДЕР
+
+
   window.onload = function () {
     document.body.classList.add('loaded_hiding');
     window.setTimeout(function () {
@@ -340,5 +327,4 @@ $(function () {
       document.body.classList.remove('loaded_hiding');
     }, 500);
   };
-
 });
