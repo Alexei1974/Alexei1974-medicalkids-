@@ -1815,13 +1815,14 @@ input.valid {
     display: none;
   }
   .promo__descr {
-    max-width: 100%;
-    position: relative;
-    left: 0;
-    top: -100px;
+    max-width: 500px;
     z-index: 3;
     font-size: 18px;
     padding: 22px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: auto;
   }
   .contacts__info {
     position: static;

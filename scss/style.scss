@@ -20,6 +20,7 @@
     border-radius: 0px 0px 15px 15px;
     margin-right: 99px;
     width: 150px;
+    height: 60px;
     flex-shrink: 0;
     z-index: 10;
   }
@@ -523,6 +524,10 @@
   &__card-star {
     margin-bottom: 13px;
     display: flex;
+    img{
+      width: 15px;
+      height: 15px;
+    }
   }
 
   &__card-date {
@@ -572,6 +577,9 @@
 
   &__card-avatat {
     margin-right: 15px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
   }
 
   &__card-user-name {
