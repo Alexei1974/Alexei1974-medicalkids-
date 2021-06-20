@@ -2126,7 +2126,7 @@ input.valid {
   .footer__left,
   .footer__tel,
   .footer__list,
-  footer__right {
+  .footer__right {
     width: 100%;
   }
   .footer__list {
@@ -2207,8 +2207,8 @@ input.valid {
     font-size: 27px;
   }
   .img-man {
-    max-width: 100%;
-    height: auto;
+    width: 306px;
+    height: 470px;
   }
 }
 
