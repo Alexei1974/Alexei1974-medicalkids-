@@ -710,6 +710,11 @@ input.valid {
   z-index: 10;
 }
 
+.header__logo img {
+  width: 65px;
+  height: 29px;
+}
+
 .header__nav {
   display: flex;
   flex-grow: 1;
@@ -1302,6 +1307,11 @@ input.valid {
   border-radius: 50%;
 }
 
+.customer__card-avatat img {
+  width: 55px;
+  height: 55px;
+}
+
 .customer__card-user-name {
   font-size: 14px;
   font-family: "SFProDisplay-400";
@@ -1661,6 +1671,11 @@ input.valid {
 
 .footer__social a:hover {
   background-color: #e4afaf;
+}
+
+.footer__social a img {
+  width: 15px;
+  height: 10px;
 }
 
 .footer__coppy {
