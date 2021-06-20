@@ -23,6 +23,10 @@
     height: 60px;
     flex-shrink: 0;
     z-index: 10;
+    img{
+      width: 65px;
+      height: 29px;
+    }
   }
 
   &__nav {
@@ -580,6 +584,10 @@
     width: 55px;
     height: 55px;
     border-radius: 50%;
+    img{
+      width: 55px;
+      height: 55px;
+    }
   }
 
   &__card-user-name {
@@ -707,7 +715,9 @@
     width: 40%;
     position: relative;
     margin-top: -170px;
+
   }
+ 
 
   &__descr {
     position: absolute;
@@ -748,6 +758,10 @@
     line-height: 1.5;
   }
 }
+.img-man{
+  width: 508px;
+  height: 787px;
+}
 // map---------------------
 
 .contacts {
@@ -773,6 +787,10 @@
   &__logo {
     margin-bottom: 23px;
     display: inline-block;
+    img{
+      width: 99px;
+      height: 46px;
+    }
   }
 
   &__tel-link {
@@ -846,6 +864,10 @@
   &__logo {
     display: block;
     margin-bottom: 9px;
+    img{
+      width: 99px;
+      height: 46px;
+    }
   }
 
   &__tel {
@@ -930,6 +952,10 @@
       transition: background-color 0.7s linear;
       &:hover {
         background-color: rgb(228, 175, 175);
+      }
+      img{
+        width: 15px;
+        height: 10px;
       }
     }
   }
@@ -1375,7 +1401,7 @@
   .footer__left,
   .footer__tel,
   .footer__list,
-  footer__right {
+  .footer__right {
     width: 100%;
   }
   .footer__list {
@@ -1455,6 +1481,10 @@
   }
   .popup__title{
     font-size: 27px;
+  }
+  .img-man{
+   width:306px;
+   height: 470px;
   }
 }
 
