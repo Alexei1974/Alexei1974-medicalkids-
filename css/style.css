@@ -1438,11 +1438,6 @@ input.valid {
   margin-top: -170px;
 }
 
-.promo__form-right img {
-  width: 508px;
-  height: 787px;
-}
-
 .promo__descr {
   position: absolute;
   padding: 45px 30px;
@@ -1480,6 +1475,11 @@ input.valid {
   font-family: "SFProDisplay-400";
   color: #a4aca8;
   line-height: 1.5;
+}
+
+.img-man {
+  width: 508px;
+  height: 787px;
 }
 
 .contacts {
@@ -1584,7 +1584,7 @@ input.valid {
 
 .footer__logo img {
   width: 99px;
-  height: 66px;
+  height: 56px;
 }
 
 .footer__tel {
@@ -2200,6 +2200,10 @@ input.valid {
   }
   .popup__title {
     font-size: 27px;
+  }
+  .img-man {
+    max-width: 100%;
+    height: auto;
   }
 }
 
