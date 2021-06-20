@@ -1509,6 +1509,11 @@ input.valid {
   display: inline-block;
 }
 
+.contacts__logo img {
+  width: 99px;
+  height: 46px;
+}
+
 .contacts__tel-link {
   display: block;
   font-size: 20px;
@@ -1584,7 +1589,7 @@ input.valid {
 
 .footer__logo img {
   width: 99px;
-  height: 56px;
+  height: 46px;
 }
 
 .footer__tel {
