@@ -1438,6 +1438,11 @@ input.valid {
   margin-top: -170px;
 }
 
+.promo__form-right img {
+  width: 508px;
+  height: 787px;
+}
+
 .promo__descr {
   position: absolute;
   padding: 45px 30px;
@@ -1575,6 +1580,11 @@ input.valid {
 .footer__logo {
   display: block;
   margin-bottom: 9px;
+}
+
+.footer__logo img {
+  width: 99px;
+  height: 66px;
 }
 
 .footer__tel {
