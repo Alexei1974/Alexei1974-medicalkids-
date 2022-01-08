@@ -1,30 +1,35 @@
 $(function () {
-  window.onload = function () {
-    // Получаем все элементы с дата-атрибутом data-bg
-    let images = document.querySelectorAll("[data-bg]");
-    // Проходимся по каждому
-    for (let i = 0; i < images.length; i++) {
-      // Получаем значение каждого дата-атрибута
-      let image = images[i].getAttribute("data-bg");
-      // Каждому найденному элементу задаем свойство background-image с изображение формата jpg
-      images[i].style.backgroundImage = "url(" + image + ")";
-    }
 
-    // Проверяем, является ли браузер посетителя сайта Firefox и получаем его версию
-    let isitFirefox = window.navigator.userAgent.match(/Firefox\/([0-9]+)\./);
-    let firefoxVer = isitFirefox ? parseInt(isitFirefox[1]) : 0;
+ 
+    var canUseWebP = function () {
+      var elem = document.createElement('canvas');
 
-    // Если есть поддержка Webp или браузер Firefox версии больше или равно 65
-    if (canUseWebp() || firefoxVer >= 65) {
-      // Делаем все то же самое что и для jpg, но уже для изображений формата Webp
-      let imagesWebp = document.querySelectorAll("[data-bg-webp]");
-      for (let i = 0; i < imagesWebp.length; i++) {
-        let imageWebp = imagesWebp[i].getAttribute("data-bg-webp");
-        imagesWebp[i].style.backgroundImage = "url(" + imageWebp + ")";
+      if (!!(elem.getContext && elem.getContext('2d'))) {
+        // was able or not to get WebP representation
+        return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+      }
+
+      // very old browser like IE 8, canvas not supported
+      return false;
+    };
+
+    var isWebpSupported = canUseWebP();
+
+    if (isWebpSupported === false) {
+      var lazyItems = document.querySelectorAll('[data-bg-replace-webp]');
+
+      for (var i = 0; i < lazyItems.length; i += 1) {
+        var item = lazyItems[i];
+
+        var dataSrcReplaceWebp = item.getAttribute('data-bg-replace-webp');
+        if (dataSrcReplaceWebp !== null) {
+          item.setAttribute('data-bg', dataSrcReplaceWebp);
+        }
       }
     }
-  };
 
+
+ 
   var lazyLoadInstance = new LazyLoad({});
 
   $(".customer__inner").slick({
@@ -190,9 +195,18 @@ $(function () {
   window.addEventListener("scroll", checkYamapInit);
   checkYamapInit();
 
-  $(".input-tel").inputmask("+7(999)999-9999");
+   
+
+ 
+  jQuery.validator.addMethod("input-tel", function (phone_number, element) {
+    phone_number = phone_number.replace(/\s+/g, "");
+    return this.optional(element) || phone_number.length > 9 &&
+      phone_number.match(/^((\+7|7|8)+([0-9]){10})$/);
+  }, "Введите корректный номер телефона.");
+
 
   $(".form").each(function () {
+   
     $(this).validate({
       rules: {
         name: {
@@ -220,6 +234,7 @@ $(function () {
         },
         phone: {
           required: "Введите ваш номер телефона.",
+         
         },
       },
       submitHandler: function (form) {
@@ -264,6 +279,7 @@ $(function () {
           },
           phone: {
             required: "Введите ваш номер телефона.",
+            minlength: 8,
           },
         },
         submitHandler: function (form) {
@@ -279,6 +295,10 @@ $(function () {
       });
     }
   );
+
+  
+  
+  
 
   $(document).on("click", function (e) {
     // отслеживаем событие клика по веб-документу
@@ -336,7 +356,7 @@ $(function () {
     var top = $(id).offset().top; // получаем координаты блока
     $("body, html").animate({ scrollTop: top }, 1800); // плавно переходим к блоку
   });
-
+  
   window.onload = function () {
     document.body.classList.add("loaded_hiding");
     window.setTimeout(function () {
@@ -344,4 +364,5 @@ $(function () {
       document.body.classList.remove("loaded_hiding");
     }, 500);
   };
+
 });
